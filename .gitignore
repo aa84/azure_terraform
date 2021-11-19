@@ -1,0 +1,3 @@
+jumphost/terraform/.terraform/
+jumphost/terraform/*tfstate*
+jumphost/terraform/.terraform*
