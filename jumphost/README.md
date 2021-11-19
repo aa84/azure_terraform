@@ -29,6 +29,17 @@ webvm ansible_host=10.0.1.4 ansible_user=alessandro ansible_ssh_private_key_file
 ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand="ssh -W %h:%p -q jumphost"'
 ```
 
+oppure
+
+```
+[deployment]
+webvm ansible_host=10.0.1.4 ansible_user=alessandro ansible_ssh_private_key_file=hello
+[deployment:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand="ssh -i hello -W %h:%p alessandro@20.107.77.18 -p 22"'
+```
+where hello è il nome della chiave privata.
+
+
 playbook.yml
 ```
 - hosts: all
